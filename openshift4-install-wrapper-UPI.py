@@ -38,7 +38,17 @@ def help():
   print('\__ 5. A mac address pattern has been defined, if you want to choose another set of mac address, feel free to do it.')
   print('\__ 6. You can choose any OpenShift minor version, the installer will deploy the latest minor available, no option to choose any "4.y.Z"')
   print('\__ 7. The pull secret available to download from cloud.redhat.com (pull-secret.txt) must be located in the same dir where the installer is executed.')
-  print('\__ 8. The ssh key used to be able to connect to RHCOS nodes must be located in the same dir where the installer is executed, as a ssh-key.txt file')
+  print('\__ 8. The ssh key used to be able to connect to RHCOS nodes must be located in the same dir where the installer is executed, as a ssh-key.txt file\n')
+  print('Options:')
+  print('  -m, --masters <NUM_MASTERS>      | Number of masters to deploy')
+  print('  -w, --workers <NUM_WORKERS>      | Number of workers to deploy')
+  print('  -s, --disksize <DISK_SIZE>       | Virtual disk size')
+  print('  -r, --ram <RAM_SIZE>             | Ram size')
+  print('  -c, --cpus <NUM_CPUs>            | Number of CPUs per VM')
+  print('  -p, --prefix <clustername>       | Name of the cluster')
+  print('  -P, --path <ocp4configpath>      | Path where manifests, ignition, auth configs will be saved')
+  print('  -v, --version <ocp4_version>     | OCP4 version to deploy')
+  print('  -D, --destroy                    | Destroy the cluster')
   print('\n\nTo create a New Environment:')
   print('Usage: ' + sys.argv[0] + ' -m <NUM_MASTERS> -w <NUM_WORKERS> -s <DISK_SIZE_GB> -r <RAM_GB> -c <NUM_CPUS> -p <PREFIX> -P <ocp4_config_path> -v <OCP4_version>')
   print('Example: ')
@@ -317,7 +327,7 @@ def waitForBootstrap(ocp4path):
     logger('\nWARNING', 'Something went wrong, check for errors in bootstrap and master servers...')
     sys.exit(2)
     
-def pendingTasks():
+def pendingTasks(ocp4path):
   logger('\nINFO', 'The cluster is up & running!')
   logger('INFO', 'There are two additional steps pending though, it is required manual intervention!')
   logger('INFO', '\__ 0.- Log in your cluster.')
