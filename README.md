@@ -50,7 +50,7 @@ Example:
 
 ```
 ## Env VARS 
-First of all, set to your custom values the following variables available in top section.
+First of all, set to your custom values the following variables available at the top.
 ENV | Description
 ----|--------------------------------------
 VM_HOME | Path where VMs data will be stored
