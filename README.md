@@ -62,8 +62,8 @@ DEFAULT pxeboot
 TIMEOUT 20
 PROMPT 0
 LABEL pxeboot
-    KERNEL http://x399.zelioman.com/rhcos-live-kernel-x86_64
-    APPEND ip=192.168.122.40::192.168.122.1:255.255.255.0:VERSION.openshift.local:ens3:none nameserver=192.168.122.200 rd.neednet=1 initrd=http://x399.zelioman.com/rhcos-live-initramfs.x86_64.img console=tty0 coreos.inst=yes coreos.inst.install_dev=vda coreos.live.rootfs_url=http://x399.zelioman.com/rhcos-live-rootfs.x86_64.img coreos.inst.ignition_url=http://x399.zelioman.com/bootstrap.ign
+    KERNEL http://<YOUR_WEBSERVER>/rhcos-live-kernel-x86_64
+    APPEND ip=192.168.122.40::192.168.122.1:255.255.255.0:VERSION.openshift.local:ens3:none nameserver=192.168.122.200 rd.neednet=1 initrd=http://<YOUR_WEBSERVER>/rhcos-live-initramfs.x86_64.img console=tty0 coreos.inst=yes coreos.inst.install_dev=vda coreos.live.rootfs_url=http://<YOUR_WEBSERVER>/rhcos-live-rootfs.x86_64.img coreos.inst.ignition_url=http://<YOUR_WEBSERVER>/bootstrap.ign
 ```
 
 ```
@@ -72,6 +72,6 @@ DEFAULT pxeboot
 TIMEOUT 20
 PROMPT 0
 LABEL pxeboot
-    KERNEL http://x399.zelioman.com/rhcos-installer-kernel-x86_64
-    APPEND ip=192.168.122.40::192.168.122.1:255.255.255.0:VERSION.openshift.local:ens3:none nameserver=192.168.122.200 rd.neednet=1 initrd=http://x399.zelioman.com/rhcos-installer-initramfs.x86_64.img console=tty0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://x399.zelioman.com/rhcos-metal.x86_64.raw.gz coreos.inst.ignition_url=http://x399.zelioman.com/bootstrap.ign
+    KERNEL http://<YOUR_WEBSERVER>/rhcos-installer-kernel-x86_64
+    APPEND ip=192.168.122.40::192.168.122.1:255.255.255.0:VERSION.openshift.local:ens3:none nameserver=192.168.122.200 rd.neednet=1 initrd=http://<YOUR_WEBSERVER>/rhcos-installer-initramfs.x86_64.img console=tty0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://<YOUR_WEBSERVER>/rhcos-metal.x86_64.raw.gz coreos.inst.ignition_url=http://<YOUR_WEBSERVER>/bootstrap.ign
 ```
