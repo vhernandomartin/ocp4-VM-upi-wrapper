@@ -49,9 +49,15 @@ Example:
          \_./openshift4-install-wrapper-UPI.py --masters 3 --workers 2 --disksize 25GB --ram 8G --cpus 4 --prefix ocp46 --path=/home/user/ocp4/ocp46.openshift.local --version=4.6 -D
 
 ```
-
+## Env VARS 
+First of all, set to your custom values the following variables available in top section.
+ENV | Description
+----|--------------------------------------
+VM_HOME | Path where VMs data will be stored
+WEB_SERVER_HOME | VirtualHost Path
+TFTP_HOME | Path where pxe files are placed
 ## Other resources
-#### tftpboot pxe files
+### tftpboot pxe files
 Since it seems the way to deploy RHCOS has changed from OCP4.6 there are two different templates, the first is for deployments > 4.6, the second one for < 4.6.
 
 **VERSION** string will be replaced automatically with the cluster name set as <prefix> option. Once the cluster is deployed the **VERSION** string is set back again.
